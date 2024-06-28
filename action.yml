@@ -20,6 +20,7 @@ runs:
         lfs: true
         submodules: true
     - name: "Add packages to repo"
+      shell: bash
       run: echo ${{inputs.package_dir}}
         
 
