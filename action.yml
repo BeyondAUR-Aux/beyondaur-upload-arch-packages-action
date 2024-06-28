@@ -1,0 +1,27 @@
+name: "BeyondAUR Upload Arch Packages"
+description: ""
+input:
+  package_dir:
+    description: "directory which contain packages"
+    required: false
+    default: "${{github.workspace}}"
+runs:
+  using: "composite"
+  steps: 
+    - name: Setup Python
+      use: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: "checkout __repo__"
+      use: actions/checkout@v4
+      with:
+        repository: "BeyondAUR/__repo__"
+        path: "./__repo__"
+        lfs: true
+        submodules: true
+    - name: "Add packages to repo"
+      run: echo ${{input.package_dir}}
+        
+
+
+      
