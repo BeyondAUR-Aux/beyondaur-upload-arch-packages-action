@@ -21,7 +21,9 @@ runs:
         submodules: true
     - name: "Add packages to repo"
       shell: bash
-      run: echo ${{inputs.package_dir}}
+      run: echo "$PACKAGE_DIR"
+      env:
+        PACKAGE_DIR: ${{inputs.package_dir}}
         
 
 
