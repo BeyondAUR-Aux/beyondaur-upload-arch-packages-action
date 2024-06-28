@@ -1,6 +1,6 @@
 name: "BeyondAUR Upload Arch Packages"
 description: ""
-input:
+inputs:
   package_dir:
     description: "directory which contain packages"
     required: false
@@ -20,7 +20,7 @@ runs:
         lfs: true
         submodules: true
     - name: "Add packages to repo"
-      run: echo ${{input.package_dir}}
+      run: echo ${{inputs.package_dir}}
         
 
 
