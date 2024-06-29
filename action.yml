@@ -20,7 +20,7 @@ runs:
         token: $REPOUPLOAD_TOKEN
         lfs: true
         submodules: true
-      secrets:
+      env:
         REPOUPLOAD_TOKEN: ${{ secrets.REPOUPLOAD_TOKEN}}
     - name: "Add packages to repo"
       shell: bash
