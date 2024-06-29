@@ -17,6 +17,7 @@ runs:
       with:
         repository: "BeyondAUR/__repo__"
         path: "./__repo__"
+        token: ${{secrets.pat}}
         lfs: true
         submodules: true
     - name: "Add packages to repo"
