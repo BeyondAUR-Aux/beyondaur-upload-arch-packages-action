@@ -17,14 +17,14 @@ runs:
       with:
         repository: "BeyondAUR/__repo__"
         path: "./__repo__"
-        token: ${{secrets.pat}}
+        token: ${{ secrets.REPOUPLOAD_TOKEN }}
         lfs: true
         submodules: true
     - name: "Add packages to repo"
       shell: bash
       run: ls "$PACKAGE_DIR/"
       env:
-        PACKAGE_DIR: ${{inputs.package_dir}}
+        PACKAGE_DIR: ${{ inputs.package_dir }}
         
 
 
