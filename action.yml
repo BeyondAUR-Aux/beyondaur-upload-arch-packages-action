@@ -5,6 +5,9 @@ inputs:
     description: "directory which contain packages"
     required: false
     default: ${{github.workspace}}
+  repo_token:
+    description: "Access token for __repo__"
+    required: true
 runs:
   using: "composite"
   steps: 
@@ -21,7 +24,7 @@ runs:
         lfs: true
         submodules: true
       env:
-        REPOUPLOAD_TOKEN: ${{ secrets.REPOUPLOAD_TOKEN}}
+        REPOUPLOAD_TOKEN: ${{ inputs.repo_token }}
     - name: "Add packages to repo"
       shell: bash
       run: ls "$PACKAGE_DIR/"
